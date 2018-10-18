@@ -39,8 +39,8 @@ class MATA410(unittest.TestCase):
         self.oHelper.SetValue("Quantidade", "1,00", grid=True)
         self.oHelper.SetValue("C6_PRCVEN", "1,00", grid=True)
         self.oHelper.SetValue("C6_VALOR", "1,00", grid=True)
-        self.oHelper.SetValue("C6_TPOP", "P", grid=True)
         self.oHelper.SetValue("C6_TES", "501", grid=True)
+        self.oHelper.SetValue("C6_TPOP", "P", grid=True)
 
         self.oHelper.SetKey("DOWN", grid=True)
 
@@ -48,8 +48,8 @@ class MATA410(unittest.TestCase):
         self.oHelper.SetValue("Quantidade", "1,00", grid=True)
         self.oHelper.SetValue("Prc Unitario", "1,00", grid=True)
         self.oHelper.SetValue("C6_VALOR", "1,00", grid=True)
-        self.oHelper.SetValue("C6_TPOP", "P", grid=True)
         self.oHelper.SetValue("C6_TES", "501", grid=True)
+        self.oHelper.SetValue("C6_TPOP", "P", grid=True)
 
         self.oHelper.LoadGrid()
 
