@@ -8,9 +8,11 @@ Main repository: [TIR](https://github.com/totvs/tir)
 
 ### Protheus WebApp Samples
 
-- **ACDA010**: A sample script for an exclusion. 
-- **Exemplo**: [SearchBrowse](https://totvs.github.io/tir/webapp.html#tir.main.Webapp.SearchBrowse)
+- **ACDA010**: A sample script for an exclusion.  
 - **ACDA100**: A sample script for an "Ordem de Separação".
-- **Exemplo**: [SetButton](https://totvs.github.io/tir/webapp.html#tir.main.Webapp.SetButton)
 - **ACDA0150**: A sample script for a "Consulta embarque verificando a ordem de colunas".
-- **Exemplo**: [CheckResult](https://totvs.github.io/tir/webapp.html#tir.main.Webapp.LoadGrid)
+
+
+### Method Examples
+
+[SearchBrowse](https://totvs.github.io/tir/webapp.html#tir.main.Webapp.SearchBrowse), [SetButton](https://totvs.github.io/tir/webapp.html#tir.main.Webapp.SetButton), [CheckResult](https://totvs.github.io/tir/webapp.html#tir.main.Webapp.LoadGrid)
