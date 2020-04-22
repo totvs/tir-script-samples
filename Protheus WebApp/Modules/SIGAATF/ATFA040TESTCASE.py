@@ -1,7 +1,6 @@
 from tir import Webapp
 import unittest
 
-
 class ATFA040(unittest.TestCase):
 
     @classmethod
@@ -14,12 +13,6 @@ class ATFA040(unittest.TestCase):
         inst.oHelper.AddParameter("MV_ULTDEPR", "D MG 01", "20191211")
         inst.oHelper.SetParameters()
 
-        
-
-# ==================================================================================
-#                 Cancelamento de baixa 
-# Kanoah "https://jiraproducao.totvs.com.br/secure/Tests.jspa#/testCase/GTSER-T46678"
-# ==================================================================================
     def test_ATFA040_001(self):
         ##cancelamento de baixa
         self.oHelper.WaitShow("Baixa de Adiantamentos de Ativos Imobilizados")
@@ -37,7 +30,6 @@ class ATFA040(unittest.TestCase):
         self.oHelper.SetButton("Canc. Baixa")
         self.oHelper.SetButton("Salvar")
         self.oHelper.AssertTrue()
-
 
         self.oHelper.SearchBrowse("D MG 01 000100")
         self.oHelper.SetButton("Visualizar")

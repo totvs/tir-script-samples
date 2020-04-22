@@ -28,26 +28,11 @@ class OGC010(unittest.TestCase):
 		self.oHelper.SetValue(field="DXP_CLAINT", value="000001", name_attr=True)
 		self.oHelper.SetButton('Confirmar')				
 		self.oHelper.SetButton('Fechar')				
-		#REALIZA A VALIDAÇÃO SE O TESTE FOI COM SUCESSO, OU SEJA, GRAVOU A INFORMAÇÃO ESPERADA
 		self.oHelper.SetButton('Reservar')
 		self.oHelper.CheckResult('TOTBRUTO', user_value="220,00", name_attr=True)		
 		self.oHelper.SetButton('Confirmar')				
 		self.oHelper.SetButton('Fechar')				
 		self.oHelper.AssertTrue()
-
-	def test_OGC010_CT002(self):				
-		self.oHelper.SetButton('Agendar Take-Up')
-		self.oHelper.SetValue("Descrição/Observação", "auto")
-		self.oHelper.SetButton('Salvar')
-		self.oHelper.SetButton('Criar Atividade')
-		self.oHelper.WaitFieldValue("DXP_CODIGO", "000014")
-		self.oHelper.SetValue("Data Agend.", "09/10/2019")
-		self.oHelper.SetValue("Hora Agend.", "15:00")
-		self.oHelper.SetButton('Confirmar Agendamento')
-		self.oHelper.SetButton('Fechar')
-		self.oHelper.SetButton('Fechar')
-		self.oHelper.AssertTrue()
-		
 
 	@classmethod
 	def tearDownClass(inst):
