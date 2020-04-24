@@ -8,7 +8,7 @@ Main repository: [TIR](https://github.com/totvs/tir)
 
 ### Protheus WebApp Samples
 
-- **Exemples**: All methods are linked with script models.
+- **Exemples**: The methods below are linked to the script models
 
     [AddParameter](Modules/SIGAACD/ACDA010TESTCASE.py),
     [ChangeEnvironment](),
