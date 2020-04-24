@@ -4,7 +4,7 @@ Script samples of Totvs Interface Robot (TIR) module.
 
 Main repository: [TIR](https://github.com/totvs/tir)
 
-You can collaborate with us and share examples, ideas and concepts.
+Feel free to collaborate with us and share ideas, exemples and concepts
 
 ## Contents
 
