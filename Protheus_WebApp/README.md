@@ -4,11 +4,13 @@ Script samples of Totvs Interface Robot (TIR) module.
 
 Main repository: [TIR](https://github.com/totvs/tir)
 
+You can collaborate with us and share exemples, ideas and concepts.
+
 ## Contents
 
 ### Protheus WebApp Samples
 
-- **Exemples**: The methods below are linked to the script models
+- **Exemples**: The methods below are linked with script models.
 
     [AddParameter](Modules/SIGAACD/ACDA010TESTCASE.py),
     [ChangeEnvironment](),
