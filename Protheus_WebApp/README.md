@@ -47,18 +47,18 @@ Feel free to collaborate with us and share ideas, exemples and concepts
 
 - **More Examples**: More methods with script models.
 
-    [ChangeEnvironment]
-    [ClickGridHeader]
-    [ClickIcon]
+    <p>[ChangeEnvironment]</p>
+    <p>[ClickGridHeader]</p>
+    <p>[ClickIcon]</p>
 
-    [ClickImage]:
+    <p>[ClickImage]:</p>
 
-    def test_TMSA040_CT043(self):
-		self.oHelper.Setup('SIGATMS','19/06/2019','T1','M SP 03 ','43')
-		self.oHelper.Program('TMSA040') 
-		self.oHelper.SearchBrowse('M SP 01 M SP 01 000003')
-		self.oHelper.SetButton('Outras Ações', 'Previsao Entrega')
-		self.oHelper.SetValue('cTipTrans', '1', name_attr=True)
+    <p>def test_TMSA040_CT043(self):</p>
+		<p>self.oHelper.Setup('SIGATMS','19/06/2019','T1','M SP 03 ','43')</p>
+		<p>self.oHelper.Program('TMSA040')</p> 
+		<p>self.oHelper.SearchBrowse('M SP 01 M SP 01 000003')
+		<p>self.oHelper.SetButton('Outras Ações', 'Previsao Entrega')
+		<p>self.oHelper.SetValue('cTipTrans', '1', name_attr=True)
 		self.oHelper.SetValue('cCliDev', 'TMS001', name_attr=True)
 		self.oHelper.SetValue('cLojDev', '01', name_attr=True)
 		self.oHelper.SetValue('cCodOri', 'Q50308', name_attr=True)
