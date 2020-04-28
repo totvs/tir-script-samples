@@ -44,18 +44,3 @@ Feel free to collaborate with us and share ideas, exemples and concepts
     [WaitHide](Modules/SIGAJURI/JURA100TESTCASE.py),
     [WaitProcessing](Modules/SIGAFIN/FINA910TESTCASE.py),
     [WaitShow](Modules/SIGAACD/ACDA010TESTCASE.py)
-
-- **More Examples**: More methods with script models.
-
-    [ClickImage]:
-
-	<p>self.oHelper.Program('TMSA040') 
-	<p>self.oHelper.SearchBrowse('M SP 01 M SP 01 000003')
-	<p>self.oHelper.SetButton('Outras Ações', 'Previsao Entrega')
-	<p>self.oHelper.SetValue('cTipTrans', '1', name_attr=True)
-	<p>self.oHelper.SetValue('cCliDev', 'TMS001', name_attr=True)
-	<p>self.oHelper.SetValue('cLojDev', '01', name_attr=True)
-	<p>self.oHelper.SetValue('cCodOri', 'Q50308', name_attr=True)
-	<p>self.oHelper.SetValue('cCodDes', 'O09102', name_attr=True)
-	<p>self.oHelper.ClickImage('s4wb064n')
-	<p>self.oHelper.AssertTrue()
