@@ -4,14 +4,15 @@ Script samples of Totvs Interface Robot (TIR) module.
 
 Main repository: [TIR](https://github.com/totvs/tir)
 
+Feel free to collaborate with us and share ideas, exemples and concepts
+
 ## Contents
 
 ### Protheus WebApp Samples
 
-- **Exemples**: os métodos abaixo estão linkados com os modelos de script
+- **Examples**: The methods below are linked with script models.
 
     [AddParameter](Modules/SIGAACD/ACDA010TESTCASE.py),
-    [ChangeEnvironment](),
     [CheckHelp](Modules/SIGACTB/CTBA011TESTCASE.py),
     [CheckResult](Modules/SIGAAGR/OGC010TESTCASE.py),
     [CheckView](Modules/SIGACTB/CTBA200TESTCASE.py),
@@ -19,20 +20,11 @@ Main repository: [TIR](https://github.com/totvs/tir)
     [ClickCheckBox](Modules/SIGAEST/MATA180TESTCASE.py),
     [ClickFolder](Modules/SIGAPCO/PCOA030TESTCASE.py),
     [ClickGridCell](Modules/SIGAFIN/FINA340TESTCASE.py),
-    [ClickGridHeader](),
-    [ClickIcon](),
-    [ClickImage](),
     [ClickLabel](Modules/SIGABI/BIXLogTESTCASE.py),
-    [ClickListBox](),
     [ClickMenuPopUpItem](Modules/SIGAEST/MATC710TESTCASE.py),
     [ClickTree](Modules/SIGAGCP/GCPA200TESTCASE.py),
-    [Finish](),
-    [GetText](),
     [GetValue](Modules/SIGACTB/CTBA011TESTCASE.py),
-    [GridTree](),
     [LoadGrid](Modules/SIGAEST/MATA105TESTCASE.py),
-    [LogOff](),
-    [MessageBoxClick](),
     [Program](Modules/SIGATMS/TMSA200TESTCASE.py),
     [RestoreParameters](Modules/SIGAJURI/JURA094TESTCASE.py),
     [ScrollGrid](Modules/SIGAGTP/GTPA003TESTCASE.py),
@@ -44,7 +36,6 @@ Main repository: [TIR](https://github.com/totvs/tir)
     [SetKey](Modules/SIGAEST/MATA230TESTCASE.py),
     [SetLateralMenu](Modules/SIGABI/BIXProfileTESTCASE.py),
     [SetParameters](Modules/SIGAPCO/PCOC360TESTCASE.py),
-    [SetTabEDAPP](),
     [SetValue](Modules/SIGACTB/CTBR200TESTCASE.py),
     [Setup](Modules/SIGATMS/TMSA500TESTCASE.py),
     [SetupTSS](Modules/SIGATSS/TSSMANAGERTESTCASE.py),
