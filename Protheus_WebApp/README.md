@@ -43,4 +43,6 @@ Feel free to collaborate with us and share ideas, exemples and concepts
     [WaitFieldValue](Modules/SIGAJURI/JURA106TESTCASE.py),
     [WaitHide](Modules/SIGAJURI/JURA100TESTCASE.py),
     [WaitProcessing](Modules/SIGAFIN/FINA910TESTCASE.py),
-    [WaitShow](Modules/SIGAACD/ACDA010TESTCASE.py)
+    [WaitShow](Modules/SIGAACD/ACDA010TESTCASE.py),
+    [OpenCSV](Modules/SIGAFAT/CSV/MATA030TESTCASE.py),
+    [QueryExecute](Modules/SIGAFAT/DATABASE/MATA030TESTCASE.py).
