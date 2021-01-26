@@ -37,9 +37,9 @@ class JURA094(unittest.TestCase):
 		self.oHelper.SetButton("Fechar")
 		self.oHelper.SetButton("Fechar")
 
+		# Histórico de Objetos
 		self.oHelper.SetButton("Outras Ações","Correção Valores,Correção Valores")
 		self.oHelper.SetButton("Sim")
-		self.oHelper.SetButton("Fechar")
 		self.oHelper.SetButton("Outras Ações","Histórico Objetos")
 		self.oHelper.ClickGridCell("Cod Valor",row=5)
 		self.oHelper.SetButton("Visualizar")
@@ -50,6 +50,7 @@ class JURA094(unittest.TestCase):
 		self.oHelper.SetButton("Fechar")
 		self.oHelper.SetButton("X")
 
+		# Verificação do codigo de Juiz
 		self.oHelper.SetButton("Visualizar")
 		self.oHelper.CheckResult("NSY_CJUIZ","001",name_attr=True)
 		self.oHelper.SetButton("Fechar")

@@ -10,6 +10,9 @@ class GTPA700H(unittest.TestCase):
 		inst.oHelper.Program('GTP700AMB')
 
 	def test_GTPA700H_CT001(self):
+
+		#self.oHelper.SetButton("Abrir Caixa")
+		#self.oHelper.SetButton("Caixa Reaberto")
 		self.oHelper.SearchBrowse("D MG    000012", "Filial+cod. Caixa")
 		self.oHelper.ClickLabel("Fechar Caixa")
 		self.oHelper.WaitProcessing("Aguarde o fechamento do caixa.")
@@ -20,12 +23,15 @@ class GTPA700H(unittest.TestCase):
 		self.oHelper.SetButton("Fechar")
 		self.oHelper.WaitProcessing("Aguarde o fechamento do caixa.")
 		self.oHelper.SetButton("Ok")
+		self.oHelper.SetButton("Sim")
+		self.oHelper.SetButton("Ok")
 		self.oHelper.LoadGrid()
 		self.oHelper.AssertTrue()
 	
 	@classmethod
 	def tearDownClass(inst):
-		inst.oHelper.TearDown()		
+		inst.oHelper.TearDown()
+		
 
 if __name__ == '__main__':
 	unittest.main()

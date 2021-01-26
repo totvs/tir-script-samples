@@ -1,7 +1,7 @@
 from tir import Webapp 
 import unittest
 from datetime import datetime
-
+import time  
 DateSystem = datetime.today().strftime("%d/%m/%Y")
 
 class CRMA080(unittest.TestCase):
@@ -15,6 +15,9 @@ class CRMA080(unittest.TestCase):
         self.oHelper.Program("CRMA080")  
 
     def test_CRMA080_CT001(self):  
+        """
+        Test Case CT001 - Consulta Funil de Vendas
+        """
         self.oHelper.WaitShow("Configuração de Filtros - Funil de Vendas")
         self.oHelper.ScrollGrid(column="Processo",match_value="FAT004",grid_number=2)
         self.oHelper.ClickBox(fields="Processo", contents_list="FAT004", select_all=False, grid_number=2)
@@ -37,7 +40,11 @@ class CRMA080(unittest.TestCase):
         
     @classmethod
     def tearDownClass(self):
+        """
+        Method that finishes the test case. 
+        """
         self.oHelper.TearDown()  
+
 
 if __name__ == "__main__":
     unittest.main()

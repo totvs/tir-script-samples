@@ -10,6 +10,7 @@ class MATA730(unittest.TestCase):
 		inst.oHelper.Program('MATA730')
 
 	def test_MATA730_001(self):
+    			
 		self.oHelper.SetValue('Periodo Inicial ?','29/04/2019')
 		self.oHelper.SetValue('Periodo Final ?','29/04/2019')
 		self.oHelper.SetValue('Dt.Entrega De ?','29/04/2019')
@@ -18,11 +19,17 @@ class MATA730(unittest.TestCase):
 		self.oHelper.SetValue('Ordem de Prod. Ate ?','PCP13301001')
 		self.oHelper.SetValue('Saldo a Considerar ?','Ordem de Prod.')
 		self.oHelper.SetValue('Considera informacoes ?','Roteiro operaco')
+		
 		self.oHelper.SetButton('Ok')
+
 		self.oHelper.SetButton('Ok')
+
 		self.oHelper.ClickBox('Numero da OP','PCP133')
+
 		self.oHelper.SetButton('Calculo')
+
 		self.oHelper.Program('MATA730')
+
 		self.oHelper.AssertTrue()
 
 	@classmethod

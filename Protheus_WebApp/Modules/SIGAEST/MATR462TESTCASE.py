@@ -1,5 +1,10 @@
+#//-------------------------------------------------------------------
+#/*/{Protheus.doc} MATR270 - 
+#/*/
+#//-------------------------------------------------------------------
 from tir import Webapp
 import unittest
+import time
 
 class MATR462(unittest.TestCase):
 
@@ -10,7 +15,9 @@ class MATR462(unittest.TestCase):
 		inst.oHelper.Program('MATR462')
 
 	def test_MATR462_CT001(self):
+
 		self.oHelper.SetButton('Param.')
+
 		self.oHelper.SetValue('De  Produto ?','ESTSE0000000000000000000000550')
 		self.oHelper.SetValue('Ate Produto ?','ESTSE0000000000000000000000550')
 		self.oHelper.SetValue('De  Armazem ?','')
@@ -19,9 +26,14 @@ class MATR462(unittest.TestCase):
 		self.oHelper.SetValue('Ate Grupo ?','ZZ')
 		self.oHelper.SetValue('De  Tipo ?','')
 		self.oHelper.SetValue('Ate Tipo ?','ZZ')
+
 		self.oHelper.SetButton('Ok')
-		self.oHelper.SetButton('Ok')		
+		self.oHelper.SetButton('Ok')
+		#self.oHelper.SetButton('Sim')
+
+		time.sleep(20)		
 		self.oHelper.SetButton('sair')
+		
 		self.oHelper.AssertTrue()
 
 	@classmethod

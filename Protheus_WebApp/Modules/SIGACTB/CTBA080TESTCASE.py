@@ -11,11 +11,15 @@ class CTBA080(unittest.TestCase):
     
     @classmethod
     def test_CTBA080_CT001(self):
+
         self.oHelper.SearchBrowse('D MG 01 317001')
+
         self.oHelper.SetButton("Visualizar")
+        
         self.oHelper.CheckResult('CT5_LANPAD', '317')
         self.oHelper.CheckResult('CT5_SEQUEN', '001')
         self.oHelper.CheckResult('CT5_STATUS', '1 - Ativo')
+        
         self.oHelper.SetButton("Fechar")
 
         self.oHelper.AssertTrue()

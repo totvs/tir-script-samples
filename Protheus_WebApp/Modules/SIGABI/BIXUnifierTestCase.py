@@ -1,5 +1,9 @@
+# -*- coding: utf-8 -*-
+
 import unittest
+
 from tir import Webapp
+
 
 class BIXUNIFIER(unittest.TestCase):
 
@@ -22,6 +26,25 @@ class BIXUNIFIER(unittest.TestCase):
 		self.oHelper.SetValue("HJ5 - Centro de Custo", "2 - CENTRO DE CUSTO")
 		self.oHelper.SetValue("HKJ - Fornecedor", "3 - CPF DO FORNECEDOR")
 		self.oHelper.SetValue("HJB - Região Geográfica", "2 - REGIÃO GEOGRÁFICA")
+		self.oHelper.SetButton("Confirmar")
+		self.oHelper.SetButton("Fechar")
+
+		self.oHelper.AssertTrue()
+
+	def test_BIXUNIFIER_CT002(self):
+
+		self.oHelper.SetLateralMenu('Consolidador de Dados')
+		self.oHelper.SetValue("HGK - Banco, agência e conta", "1 - NÃO CONSOLIDADO")
+		self.oHelper.SetValue("HJ7 - Cliente", "1 - NÃO CONSOLIDADO")
+		self.oHelper.SetValue("HJ8 - Item", "1 - NÃO CONSOLIDADO")
+		self.oHelper.SetValue("HJC - Representante", "1 - NÃO CONSOLIDADO")
+		self.oHelper.SetValue("HG0 - CFOP", "1 - NÃO CONSOLIDADO")
+		self.oHelper.SetValue("HG1 - Família Comercial", "1 - NÃO CONSOLIDADO")
+		self.oHelper.SetValue("HYE - Natureza Financeira", "1 - NÃO CONSOLIDADO")
+		self.oHelper.SetValue("HHW - Unidade de Medida do Item", "1 - NÃO CONSOLIDADO")
+		self.oHelper.SetValue("HJ5 - Centro de Custo", "1 - NÃO CONSOLIDADO")
+		self.oHelper.SetValue("HKJ - Fornecedor", "1 - NÃO CONSOLIDADO")
+		self.oHelper.SetValue("HJB - Região Geográfica", "1 - NÃO CONSOLIDADO")
 		self.oHelper.SetButton("Confirmar")
 		self.oHelper.SetButton("Fechar")
 

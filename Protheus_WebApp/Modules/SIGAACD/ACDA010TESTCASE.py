@@ -1,5 +1,13 @@
+#//-------------------------------------------------------------------
+#/*/{Protheus.doc} ACDA010 - 										
+#
+#@author Jefferson Silva de Sousa 
+#@since 09/12/2019
+#@version P12
+#//-------------------------------------------------------------------
 from tir import Webapp
 import unittest
+import time
 
 class ACDA010(unittest.TestCase):
 
@@ -11,12 +19,18 @@ class ACDA010(unittest.TestCase):
 		inst.oHelper.AddParameter("MV_CBPE012", "", ".T.", ".T.", ".T.")
 		inst.oHelper.AddParameter("MV_INTACD", "", "1", "1", "1")
 		inst.oHelper.SetParameters()
+
+	#CT001 - Teste de Exclusao de operador com registro de inventario cadastrado	
+	#@author: Jefferson Silva de Sousa 
+	#@date: 09/12/2019
 	
 	def test_ACDA010_CT001(self):
 		
 		self.oHelper.SearchBrowse("D MG 01 EST001")
+		time.sleep(5)
 		self.oHelper.SetButton("Outras Ações","Excluir")
-		self.oHelper.SetButton("Confirmar")		
+		self.oHelper.SetButton("Confirmar")
+		time.sleep(3)		
 		self.oHelper.WaitShow("Exclusão não permitida")		
 	
 		self.oHelper.AssertTrue()

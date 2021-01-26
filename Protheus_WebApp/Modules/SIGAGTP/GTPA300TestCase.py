@@ -12,6 +12,7 @@ class GTPA300(unittest.TestCase):
 	def test_GTPA300_CT001(self):
 		self.oHelper.SetButton("Incluir")
 		self.oHelper.SetButton("OK")
+
 		self.oHelper.SetValue('GYN_LINCOD','000001')
 		self.oHelper.SetValue('GYN_LINSEN','1')
 		self.oHelper.SetValue('GYN_CODGID','00000000001')
@@ -19,7 +20,9 @@ class GTPA300(unittest.TestCase):
 		self.oHelper.SetButton("Confirmar")
 		self.oHelper.SetButton("Fechar")
 		self.oHelper.LoadGrid()
+
 		self.oHelper.AssertTrue()
+
 
 	@classmethod
 	def tearDownClass(inst):

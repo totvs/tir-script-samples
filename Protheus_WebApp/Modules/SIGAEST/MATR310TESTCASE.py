@@ -1,5 +1,10 @@
+#//-------------------------------------------------------------------
+#/*/{Protheus.doc} MATR310 - 
+#/*/
+#//-------------------------------------------------------------------
 from tir import Webapp
 import unittest
+import time
 
 class MATR310(unittest.TestCase):
 
@@ -10,16 +15,41 @@ class MATR310(unittest.TestCase):
 		inst.oHelper.Program('MATR310')
 
 	def test_MATR310_CT001(self):
+
 		self.oHelper.AddParameter("MV_BLOQUEI", "", ".F.", ".F.", ".F.")	
 		self.oHelper.SetParameters()
+
 		self.oHelper.SetButton('Outras Ações', 'Parâmetros')
 		self.oHelper.SetValue('Produto de ?','ESTSE0000000000000000000000168')
 		self.oHelper.SetValue('Produto ate ?','ESTSE0000000000000000000000171')
 		self.oHelper.SetValue('Considera Vlr PIS/COFINS ?','Nao')
+
 		self.oHelper.SetButton('Ok')
 		self.oHelper.SetButton('Imprimir')
+		#self.oHelper.SetButton('Sim')
+		time.sleep(5)
 		self.oHelper.SetButton('Sair')
+		
 		self.oHelper.AssertTrue()
+
+	def test_MATR310_CT002(self):
+
+		self.oHelper.AddParameter("MV_BLOQUEI", "", ".F.", ".F.", ".F.")	
+		self.oHelper.SetParameters()
+
+		self.oHelper.SetButton('Outras Ações', 'Parâmetros')
+		self.oHelper.SetValue('Produto de ?','ESTSE0000000000000000000000168')
+		self.oHelper.SetValue('Produto ate ?','ESTSE0000000000000000000000171')
+		self.oHelper.SetValue('Qual a moeda ?','2a moeda')
+		
+		self.oHelper.SetButton('Ok')
+		self.oHelper.SetButton('Imprimir')
+		self.oHelper.SetButton('Sim')
+		time.sleep(5)
+		self.oHelper.SetButton('Sair')
+		
+		self.oHelper.AssertTrue()
+
 
 	@classmethod
 	def tearDownClass(inst):

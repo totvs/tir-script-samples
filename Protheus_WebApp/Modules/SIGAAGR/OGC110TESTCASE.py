@@ -53,6 +53,35 @@ class OGC110(unittest.TestCase):
 		else:
 			self.oHelper.AssertTrue()	
 		self.oHelper.SetButton('Fechar')			
+		
+	
+	def test_OGC110_CT002(self): #Excluir				
+	
+		self.oHelper.ClickGridCell("Contrato", row=2, grid_number=1)		
+		self.oHelper.SetButton('Outras Ações', 'Excluir')			
+		self.oHelper.SetButton('Sim')					
+		self.oHelper.SetButton('Fechar')	
+		self.oHelper.ClickGridCell("Cód. Comissão", row=2, grid_number=1)					
+		codComissao = self.oHelper.GetValue("Cód. Comissão", grid=True, line=2, grid_number=1)
+
+		if codComissao == "000003":
+			self.oHelper.AssertFalse()	
+		else:
+			self.oHelper.AssertTrue()
+
+	def test_OGC110_CT003(self): #Estorno				
+	
+
+		self.oHelper.ClickGridCell("Contrato", row=1, grid_number=1)		
+		self.oHelper.SetButton('Outras Ações', 'Estorno Comissão')			
+		self.oHelper.SetButton('Sim')	
+		self.oHelper.SetButton('Fechar')					
+		self.oHelper.SetButton('Detalhes')			
+		self.oHelper.ClickGridCell("Pedido", row=1, grid_number=1)	
+		self.oHelper.CheckResult("Pedido", "    ", grid=True, line=1, grid_number=1)		
+		self.oHelper.LoadGrid()
+		self.oHelper.SetButton('Fechar')					
+		self.oHelper.AssertTrue()	
 
 	@classmethod
 	def tearDownClass(inst):
