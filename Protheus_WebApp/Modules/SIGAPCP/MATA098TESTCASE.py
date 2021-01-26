@@ -10,9 +10,13 @@ class MATA098(unittest.TestCase):
 		inst.oHelper.Program('MATA098')
 
 	def test_MATA098_001(self):
+    		
 		self.oHelper.SearchBrowse('D MG 01 PCP_TIR_MATA098_CFGPRD_001001', 'Filial+codigo Base + Item')
+
 		self.oHelper.SetButton('Definir')
+
 		self.oHelper.SetButton('Ok')
+		
 		self.oHelper.SetValue('BS_DESCR','ROSA', grid=True)
 		self.oHelper.SetValue('BS_DESCPRD','ROSA', grid=True)
 		self.oHelper.SetValue('BS_CODIGO','RS', grid=True)
@@ -28,8 +32,11 @@ class MATA098(unittest.TestCase):
 		self.oHelper.SetValue('BS_CODIGO','LJ', grid=True)
 		self.oHelper.LoadGrid()
 		self.oHelper.SetKey('ESC', grid=True)
+    			
 		self.oHelper.SetButton('Salvar')
+
 		self.oHelper.SetButton('Definir')
+
 		self.oHelper.LoadGrid()
 		self.oHelper.CheckResult('BS_CODIGO','LJ', grid=True, line=1)
 		self.oHelper.LoadGrid()
@@ -37,11 +44,13 @@ class MATA098(unittest.TestCase):
 		self.oHelper.LoadGrid()
 		self.oHelper.CheckResult('BS_DESCPRD','LARANJA', grid=True, line=1)
 		self.oHelper.LoadGrid()
+
 		self.oHelper.CheckResult('BS_CODIGO','RS', grid=True, line=2)
 		self.oHelper.LoadGrid()
 		self.oHelper.CheckResult('BS_DESCR','ROSA', grid=True, line=2)
 		self.oHelper.LoadGrid()
 		self.oHelper.CheckResult('BS_DESCPRD','ROSA', grid=True, line=2)
+		
 		self.oHelper.LoadGrid()
 		self.oHelper.CheckResult('BS_CODIGO','RX', grid=True, line=3)
 		self.oHelper.LoadGrid()
@@ -49,6 +58,7 @@ class MATA098(unittest.TestCase):
 		self.oHelper.LoadGrid()
 		self.oHelper.CheckResult('BS_DESCPRD','ROXO', grid=True, line=3)		
 		self.oHelper.LoadGrid()
+		
 		self.oHelper.SetButton('Cancelar')
 
 		self.oHelper.AssertTrue()
@@ -56,10 +66,15 @@ class MATA098(unittest.TestCase):
 	def test_MATA098_002(self):
     		
 		self.oHelper.SearchBrowse('D MG 01 PCP_TIR_MATA098_CFGPRD_002001', 'Filial+codigo Base + Item')
+
 		self.oHelper.SetButton('Outras Ações', 'Limpar')
+
 		self.oHelper.SetButton('Confirmar')
+
 		self.oHelper.SetButton('Sim')
+
 		self.oHelper.AssertTrue()
+
 
 	@classmethod
 	def tearDownClass(inst):

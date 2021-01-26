@@ -1,18 +1,27 @@
 from tir import Webapp
 import unittest
 
+
 class CTBR510(unittest.TestCase):
 
     @classmethod
     def setUpClass(inst):
+
+        # Endereção do webapp e o nome do Browser
         inst.oHelper = Webapp()
+
+        # Parametros de inicialização
         inst.oHelper.Setup("SIGACTB", "15/04/2015", "T1", "D RJ 02 ", "34")
+
+        # Nome da rotina do Caso de Teste
         inst.oHelper.Program("CTBR510")
 
     @classmethod
     def test_CTBR510_001(self):
+        # Teste Cancelando tela de demostrativos Novo, Restaurar Selecionado Cancelar
         self.oHelper.AddParameter("MV_TREPORT", "", "1")
         self.oHelper.SetParameters()
+
         self.oHelper.SetValue("Exercicio Contabil ?", "215")
         self.oHelper.SetValue("Cod. Config. Livros ?", "060")
         self.oHelper.SetValue("Moeda ?", "01")
@@ -23,7 +32,8 @@ class CTBR510(unittest.TestCase):
         self.oHelper.SetValue("Data de Referencia ?", "31/12/2015")
         self.oHelper.SetValue("Periodo ?", "Periodo")
         self.oHelper.SetValue("Imprime Termo Auxiliar ?", "Sim")
-        self.oHelper.SetValue("Termo Auxil. a ser impresso ?", "")
+        self.oHelper.SetValue(
+            "Termo Auxil. a ser impresso ?", "")
         self.oHelper.SetValue("Saldos Zerados ?", "Nao")
         self.oHelper.SetValue("Considerar ?", "Mov. Periodo")
         self.oHelper.SetValue("Descrição na Moeda ?", "01")
@@ -33,17 +43,22 @@ class CTBR510(unittest.TestCase):
         self.oHelper.SetValue("Saldo a Consolidar ?", "")
         self.oHelper.SetValue("Seleciona Filiais ?", "Nao")
         self.oHelper.SetValue("Data Periodo Anterior ?", "")
+
         self.oHelper.SetButton("Ok")
         self.oHelper.SetButton("Imprimir")
-        self.oHelper.WaitShow("Ediçäo dos Termos de Abertura/Encerramento")
+        self.oHelper.WaitShow(
+            "Ediçäo dos Termos de Abertura/Encerramento")
         self.oHelper.SetButton("x",)
         self.oHelper.SetButton("Sair")
+
         self.oHelper.RestoreParameters()
         self.oHelper.AssertTrue()
 
     @classmethod
     def tearDownClass(inst):
+
         inst.oHelper.TearDown()
+
 
 if __name__ == '__main__':
     unittest.main()

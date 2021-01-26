@@ -2,18 +2,32 @@ from tir import Webapp
 import unittest
 from datetime import datetime
 
+
 class FISA008(unittest.TestCase):
 
     @classmethod
     def setUpClass(inst):
+        '''
+        SETUP
+        Test Case Initial Setup
+        '''
+
+        #Endereço do webapp e o nome do Browser
         inst.oHelper = Webapp()
         DateSystem = datetime.today()
+        #Parametros de inicializaçao
         inst.oHelper.Setup("SIGAFIS",DateSystem.strftime('%d/%m/%Y'),"T1","XIFIS26","09")
+
+        #Nome da rotina do Caso de Teste
         inst.oHelper.Program("FISA008")
         
 
-    def FISA008_001(self):
-        DateSystem = datetime.today()      
+    def test_FISA008_001(self):
+      
+        DateSystem = datetime.today()
+
+       #Parâmetros de geração do arquivo
+        
         self.oHelper.SetValue('Data Inicial: ?',DateSystem.strftime('%d/%m/%Y'))
         self.oHelper.SetValue('Data Final: ?',DateSystem.strftime('%d/%m/%Y'))
         self.oHelper.SetValue('Livro: ?','*')
@@ -31,12 +45,17 @@ class FISA008(unittest.TestCase):
         self.oHelper.SetValue('Tipo Contribuicao ?','1')
         self.oHelper.SetValue('Indicador Regime Cumulativo ?','1')
         self.oHelper.SetValue('Indicador Bloco I ?','04')
+        #self.oHelper.ClickBox('Indicador NFe/Cupom ?','1-Consolidado ')
         self.oHelper.SetValue('Gera Cupom Fiscal ?','1')
         self.oHelper.SetValue('Gera Bloco P ?','1')
         self.oHelper.SetValue('Incidencia Tributaria (0145) ?','1')
         self.oHelper.SetValue('Gera Registro 0400 ?','1')
-        self.oHelper.SetValue('Dispensa ECD - 1.774/2017?','1')    
+        self.oHelper.SetValue('Dispensa ECD - 1.774/2017?','1')
+       
         self.oHelper.SetButton('OK')
+
+        #Parâmetros do Contabilista
+
         self.oHelper.SetValue('Nome ?','Antonio Alves')
         self.oHelper.SetValue('CNPJ ?','')
         self.oHelper.SetValue('CPF ?','48769306869')
@@ -50,15 +69,24 @@ class FISA008(unittest.TestCase):
         self.oHelper.SetValue('Telefone ?','1598130992')
         self.oHelper.SetValue('Fax ?','1598130992')
         self.oHelper.SetValue('Email ?','totvs@totvs.com.br')
+
         self.oHelper.SetButton('OK')
+        
+        
         self.oHelper.SetButton('Fechar')
         self.oHelper.SetButton('Fechar')
         self.oHelper.SetButton('Finalizar')
+       
         self.oHelper.AssertTrue()
+
         self.oHelper.SetButton('Sair da página') 
  
+
     @classmethod
     def tearDownClass(inst):
+        '''
+        Method that finishes the test case.
+        '''
         inst.oHelper.TearDown()
 
 if __name__ == '__main__':

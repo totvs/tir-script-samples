@@ -12,7 +12,9 @@ class GTPA002(unittest.TestCase):
 	def test_GTPA002_CT001(self):
 		self.oHelper.SearchBrowse("D MG    GTPL04", "Filial+cód. Linha + Código Via")
 		self.oHelper.SetButton("Outras Ações", "Replicar Perfil")
+
 		self.oHelper.SetButton("Outras Ações", "Marcar/Desmarcar Todos")
+
 		self.oHelper.SetButton("Confirmar")
 		self.oHelper.SetButton("Fechar")
 		self.oHelper.AssertTrue()

@@ -1,5 +1,12 @@
+#//-------------------------------------------------------------------
+#@author Jefferson silva de sousa
+#@since 30/10/2019
+#@version P12
+#/*/
+#//-------------------------------------------------------------------
 from tir import Webapp
 import unittest
+import time
 
 class MATA805(unittest.TestCase):
 
@@ -10,16 +17,23 @@ class MATA805(unittest.TestCase):
 		inst.oHelper.Program('MATA805')		
 
 	def test_MATA805_CT001(self):
+
 		self.oHelper.SetButton("Sim")
+		time.sleep(2)
 		self.oHelper.SetButton("Sim")
+
 		self.oHelper.SetValue("Documento","EST000001")
 		self.oHelper.SetValue("Produto","ESTSE0000000000000000000000568",grid=True)
 		self.oHelper.SetValue("Armazem","01",grid=True)
 		self.oHelper.SetValue("Endereco","END001",grid=True)
 		self.oHelper.SetValue("Qtd Distribu","10,00",grid=True)
 		self.oHelper.LoadGrid()
+
 		self.oHelper.SetButton("Confirmar")
+
+
 		self.oHelper.AssertTrue()		
+
 
 	@classmethod
 	def tearDownClass(inst):

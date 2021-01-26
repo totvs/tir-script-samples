@@ -1,5 +1,10 @@
+#//-------------------------------------------------------------------
+#/*/{Protheus.doc} MATR947 - 
+#/*/
+#//-------------------------------------------------------------------
 from tir import Webapp
 import unittest
+import time
 
 class MATR777(unittest.TestCase):
 
@@ -16,7 +21,9 @@ class MATR777(unittest.TestCase):
 		self.oHelper.SetValue('Ate pedido ?','ZZZZZ')
 		self.oHelper.SetButton('Ok')
 		self.oHelper.SetButton('Ok')
-		self.oHelper.SetButton('Sair')	
+
+		self.oHelper.SetButton('Sair')
+		
 		self.oHelper.AssertTrue()
 
 	@classmethod

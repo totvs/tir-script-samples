@@ -1,6 +1,7 @@
 from tir import Webapp
 import unittest
 
+
 class GTPA302(unittest.TestCase):
 
     @classmethod
@@ -10,8 +11,10 @@ class GTPA302(unittest.TestCase):
         inst.oHelper.Program('GTPA302')
 
     def test_GTPA302_CT001(self):
+
         self.oHelper.SetButton('Incluir')
         self.oHelper.SetBranch('D MG')
+
         self.oHelper.SetValue('Vigência de', '19/03/2020')
         self.oHelper.SetValue('Vigência ate', '31/03/2020')
         self.oHelper.SetValue('Filtra por', '1')
@@ -29,6 +32,11 @@ class GTPA302(unittest.TestCase):
         self.oHelper.SetKey('F5')
         self.oHelper.ScrollGrid(column='Código', match_value='00000000004')
         self.oHelper.SetButton('Outras Ações', 'Copia o horário selecionado')
+        # self.oHelper.ClickImage('next_mdi.png')
+        '''
+        Aguardo retorno do TIR, pois o método ClickImage 
+        não está funcionando como esperado
+        '''
         self.oHelper.SetButton('Confirmar')
         self.oHelper.SetButton('Fechar')
         self.oHelper.AssertTrue()
@@ -39,9 +47,11 @@ class GTPA302(unittest.TestCase):
         self.oHelper.SetButton('Alterar')
         self.oHelper.ClickCheckBox('Sábado', 1)
         self.oHelper.ClickCheckBox('Domingo', 1)
-        self.oHelper.ScrollGrid(column='Linha', match_value='000004', grid_number=2)
+        self.oHelper.ScrollGrid(
+            column='Linha', match_value='000004', grid_number=2)
         self.oHelper.SetButton('Outras Ações', 'Voltar o horário selecionado')
-        self.oHelper.ScrollGrid(column='Código', match_value='00000000007', grid_number=1)
+        self.oHelper.ScrollGrid(
+            column='Código', match_value='00000000007', grid_number=1)
         self.oHelper.SetKey('F5')
         self.oHelper.SetButton('Sim')
         self.oHelper.ScrollGrid(column='Código', match_value='00000000007')
@@ -50,9 +60,32 @@ class GTPA302(unittest.TestCase):
         self.oHelper.SetButton('Fechar')
         self.oHelper.AssertTrue()
 
+    def test_GTPA302_CT003(self):
+
+        self.oHelper.SearchBrowse('D MG    000007', key='Filial+cód.escala')
+        self.oHelper.SetButton('Visualizar')
+        self.oHelper.CheckResult('GYO_HRVOL', '05:00')
+        self.oHelper.CheckResult('GYO_HRFVOL', '00:00')
+        self.oHelper.CheckResult('GYO_HRDESP', '00:00')
+        self.oHelper.CheckResult('GYO_HORDES', '00:00')
+        self.oHelper.CheckResult('GYO_HORAAD', '00:00')
+        self.oHelper.CheckResult('GYO_HORPAG', '05:00')
+        self.oHelper.CheckResult('GYO_HORJOR', '05:00')
+        self.oHelper.CheckResult('GYO_RHPLAN', '00:00')
+        self.oHelper.SetButton('Fechar')
+        self.oHelper.AssertTrue()
+
+    def test_GTPA302_CT004(self):
+
+        self.oHelper.SearchBrowse('D MG    000008', key='Filial+cód.escala')
+        self.oHelper.SetButton('Outras Ações', 'Excluir')
+        self.oHelper.SetButton('Confirmar')
+        self.oHelper.AssertTrue()
+
     @classmethod
     def tearDownClass(inst):
         inst.oHelper.TearDown()
+
 
 if __name__ == '__main__':
     unittest.main()

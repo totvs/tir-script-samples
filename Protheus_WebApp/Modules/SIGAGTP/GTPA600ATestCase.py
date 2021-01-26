@@ -12,6 +12,7 @@ class GTPA600A(unittest.TestCase):
 	def test_GTPA600A_CT001(self):
 		self.oHelper.SearchBrowse("D MG    000298000289", "Filial+oportunidade + Proposta")
 		self.oHelper.SetButton("Outras Ações","Alt Dt Viagem")
+
 		self.oHelper.SetValue('G6R_DTIDA','16/04/2020')
 		self.oHelper.SetButton("Confirmar")
 		self.oHelper.SetButton("Fechar")

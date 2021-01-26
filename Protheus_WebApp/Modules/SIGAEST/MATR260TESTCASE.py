@@ -1,5 +1,10 @@
+#//-------------------------------------------------------------------
+#/*/{Protheus.doc} MATR260 - 
+#/*/
+#//-------------------------------------------------------------------
 from tir import Webapp
 import unittest
+import time
 
 class MATR260(unittest.TestCase):
 
@@ -10,6 +15,11 @@ class MATR260(unittest.TestCase):
 		inst.oHelper.Program('MATR260')
 
 	def test_MATR260_CT001(self):
+
+		#self.oHelper.AddParameter("MV_TRANSF1", " ", "SF1->F1_TRANSP", "SF1->F1_TRANSP", "SF1->F1_TRANSP")
+		#self.oHelper.AddParameter("MV_MTR947A", " ", "B5_CERT", "B5_CERT", "B5_CERT")
+		#self.oHelper.SetParameters()
+
 		self.oHelper.SetButton('Outras Ações', 'Parâmetros')
 		self.oHelper.SetValue('Aglutina por ?','Armazem')
 		self.oHelper.SetValue('Da filial ?','D MG 01')
@@ -38,7 +48,10 @@ class MATR260(unittest.TestCase):
 		self.oHelper.SetValue('Imprime descricao do Armazem ?','nao')
 		self.oHelper.SetButton('Ok')
 		self.oHelper.SetButton('Imprimir')
+		#self.oHelper.SetButton('Sim')
+		time.sleep(5)
 		self.oHelper.SetButton('sair')
+		
 		self.oHelper.AssertTrue()
 
 	@classmethod

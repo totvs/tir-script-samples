@@ -14,6 +14,7 @@ class JURA106(unittest.TestCase):
 		inst.oHelper.SetParameters()
 
 	def test_JURA106_CT001(self):
+
 		self.oHelper.SetValue("cValor","Contencioso - Fup",name_attr=True)
 		self.oHelper.WaitFieldValue("NTA_CTIPO","")
 		self.oHelper.ClickLabel("Incluir")

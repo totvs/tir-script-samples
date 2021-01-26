@@ -49,7 +49,6 @@ class ATFA175(unittest.TestCase):
         self.oHelper.SetValue("Aglutina Lanc ? ", "Não")
 
         self.oHelper.SetButton("Finalizar")
-        self.oHelper.WaitProcessing("Depreciacao Acelerada")
 
         self.oHelper.AssertTrue()
 

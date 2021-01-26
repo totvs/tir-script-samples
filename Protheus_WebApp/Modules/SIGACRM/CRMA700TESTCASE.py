@@ -8,10 +8,14 @@ class CRMA700(unittest.TestCase):
     @classmethod
     def setUpClass(inst):
         inst.oHelper = Webapp()
+        
         inst.oHelper.Setup('SIGACRM',DateSystem,'T1','D MG 01 ','73')
         inst.oHelper.Program('CRMA700')
     
     def test_CRMA700_001(self):
+        '''
+        Caso de Teste 001
+        '''
         self.oHelper.SetButton("Incluir")
         self.oHelper.SetButton("Ok")
         self.oHelper.WaitShow("Prospects - INCLUIR")
@@ -25,13 +29,18 @@ class CRMA700(unittest.TestCase):
         self.oHelper.SetValue("Bairro","Centro")
         self.oHelper.SetValue("Estado","SP")
         self.oHelper.SetValue("Cd.Municipio","50308")    
+
         self.oHelper.SetButton("Confirmar")
         self.oHelper.SetButton("Fechar")
+
         self.oHelper.AssertTrue()
 
     @classmethod
     def tearDownClass(inst):
-       inst.oHelper.TearDown()
+        '''
+        Método que finaliza o TestCase
+        '''
+        inst.oHelper.TearDown()
 
 if __name__ == '__main__':
     unittest.main()
