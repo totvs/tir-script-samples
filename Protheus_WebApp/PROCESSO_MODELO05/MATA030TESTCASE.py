@@ -25,7 +25,7 @@ class MATA030(unittest.TestCase):
 		#
 		cod = (f"{str(today.hour)[-1:]}{str(today.minute)}{str(today.second)}{str(today.microsecond)[-1:]}")
 
-		self.oHelper.SetButton('Incluirr')
+		self.oHelper.SetButton('Incluir')
 
 		self.oHelper.SetBranch('D MG 01 ')
 		self.oHelper.SetValue('A1_COD', cod)
