@@ -16,8 +16,8 @@ class MATA030(unittest.TestCase):
 		
 		# Abaixo segue outra forma de conectar no banco, caso seja necessário conectar em mais de um banco dentro do script.
 		
-		# database_content_dictionary = self.oHelper.QueryExecute("SELECT * FROM SA1T10", driver_database="NOME_DO_DRIVER_ODBC", 
-		# server_database="NOME_DO_SERVER", name_database="NOME_DO_BANCO", user_database="sa", password_database="123456")
+		# database_content_dictionary = self.oHelper.QueryExecute("SELECT * FROM SA1T10", database_driver="NOME_DO_DRIVER_ODBC", 
+		# database_server="NOME_DO_SERVER", database_name="NOME_DO_BANCO", database_user="sa", database_password="123456")
 
 		database_content_dictionary = self.oHelper.QueryExecute("SELECT * FROM SA1T10")
 
