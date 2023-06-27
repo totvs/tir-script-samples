@@ -7,6 +7,8 @@
     "Password": "1234",
     "Headless": true,
     "DebugLog": true,
+    "POUILogin": false,
+    "ScreenshotFolder": "C:\\TIR\\tir-script-samples\\Log"
     "ScreenShot": false,
     "NewLog": true,
     "MotExec": "HOMOLOGAÇÃO_TIR",
