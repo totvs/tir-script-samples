@@ -1,9 +1,15 @@
 {
-    "Url": "http://localhost:2018",
+    "Url": "http://localhost:2023",
     "Browser": "Firefox",
     "Environment": "ENVIRONMENT",
     "Language": "pt-br",
     "User": "ADMIN",
-    "Password": "1234",
-    "Headless": false
+    "Password": "1234,
+    "Headless": true,
+    "DebugLog": true,
+    "ScreenShot": false,
+    "NewLog": true,
+    "MotExec": "HOMOLOGAÇÃO_TIR",
+    "ExecId": "20201007",
+    "LogUrl1": "http://localhost:8198/log/"
 }
