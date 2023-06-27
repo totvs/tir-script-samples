@@ -4,7 +4,7 @@
     "Environment": "ENVIRONMENT",
     "Language": "pt-br",
     "User": "ADMIN",
-    "Password": "1234,
+    "Password": "1234",
     "Headless": true,
     "DebugLog": true,
     "ScreenShot": false,
