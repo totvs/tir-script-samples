@@ -2,3 +2,10 @@
 __pycache__/
 *.csv
 *.png
+/.idea/.gitignore
+/.idea/misc.xml
+/.idea/modules.xml
+/.idea/inspectionProfiles/profiles_settings.xml
+/.idea/inspectionProfiles/Project_Default.xml
+/.idea/tir-script-samples.iml
+/.idea/vcs.xml
