@@ -1,7 +1,7 @@
 from tir import Poui
 import unittest
 
-class POUI(unittest.TestCase):
+class DIAGNOSTICCENTER(unittest.TestCase):
 
     @classmethod
     def setUpClass(inst):
